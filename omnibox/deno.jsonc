@@ -1,6 +1,6 @@
 {
   "tasks": {
-    "build": "deno run --allow-env --allow-read --allow-write --allow-run esbuild.ts",
+    "build": "deno run --allow-env --allow-read --allow-write --allow-run scripts/esbuild.ts",
     "zip": "deno task build --minify; zip -vr dist.zip dist -x \"*.DS_Store\"",
     "format": "deno fmt",
     "lint": "deno lint",
