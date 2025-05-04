@@ -6,7 +6,7 @@
 import { setData, Suggest } from "./storage.ts";
 import { hasItem } from "./utils.ts";
 import { getPage, getPages } from "./fetch.ts";
-import { parse } from "https://esm.sh/@progfay/scrapbox-parser@7.2.0";
+import { parse } from "scrapbox-parser";
 
 function createStatus() {
   const div = document.createElement("div");

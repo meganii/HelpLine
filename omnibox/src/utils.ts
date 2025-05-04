@@ -1,4 +1,9 @@
-import { default as browser } from "https://esm.sh/webextension-polyfill@0.8.0";
+/// <reference no-default-lib="true" />
+/// <reference lib="esnext" />
+/// <reference lib="dom" />
+/// <reference types="npm:@types/chrome" />
+
+import { default as browser } from "webextension-polyfill";
 
 type PickRequired<T, K extends keyof T> =
   & T

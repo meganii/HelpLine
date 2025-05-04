@@ -27,7 +27,8 @@ const bundleWithEsbuild = async () => {
       plugins: [...denoPlugins()],
       entryPoints: [
         `${SRC_DIR}/background.ts`,
-        `${SRC_DIR}/content_script.ts`
+        `${SRC_DIR}/content_script.ts`,
+        `${SRC_DIR}/setting.ts`
       ],
       outdir: DIST_DIR,
       bundle: true,

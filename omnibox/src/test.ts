@@ -1,4 +1,4 @@
-import { default as Generator } from "https://esm.sh/re_expand@0.2.0";
+import { default as Generator } from "re_expand";
 
 const g = new Generator("(abc|def)(ghi|jkl)", "I am $1 or $2.");
 const [i0, i1, i2] = g.filter(" cn ");

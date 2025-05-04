@@ -12,7 +12,7 @@
 /// <reference lib="dom" />
 /// <reference types="npm:@types/chrome" />
 
-import { Asearch } from "https://raw.githubusercontent.com/takker99/deno-asearch/0.2.1/mod.ts";
+import { Asearch } from "asearch";
 import { ensureTabId } from "./utils.ts";
 import { getData } from "./storage.ts";
 import { isURL } from "./isURL.ts";

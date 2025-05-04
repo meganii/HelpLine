@@ -4,8 +4,8 @@
 /// <reference no-default-lib="true" />
 /// <reference lib="esnext" />
 /// <reference lib="dom" />
+/// <reference types="npm:@types/chrome" />
 
-import { default as browser } from "https://esm.sh/webextension-polyfill@0.8.0";
 import { getData, setData } from "./storage.ts";
 
 /** chrome.storage のデータをローカルファイルにセーブ */
@@ -22,7 +22,7 @@ async function save() {
   const url = URL.createObjectURL(
     new Blob([result], { type: "application/json" }),
   );
-  await browser.downloads.download({
+  await chrome.downloads.download({
     url: url,
     filename: "helpfeel.json",
   });
@@ -63,7 +63,7 @@ async function handleFileSelect(evt: { target: HTMLInputElement }) {
 
 /** chrome.storage のデータ消去 */
 async function clear() {
-  await browser.storage.local.clear();
+  await chrome.storage.local.clear();
 }
 
 document.getElementById("save")?.addEventListener?.("click", save);
