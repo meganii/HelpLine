@@ -16,3 +16,6 @@ Gemfile.lock
 *.xcp
 
 .DS_store
+
+omnibox/dist
+omnibox/.vscode/*

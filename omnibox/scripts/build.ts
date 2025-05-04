@@ -1,8 +1,8 @@
 // zipファイルを作る
 // chromeとfirefoxとで違うmanifest.jsonを作る必要があるので、build scriptにした
 /// <reference lib="deno.unstable" />
-import { parse } from "./deps/flags.ts";
-import { JSZip } from "./deps/jszip.ts";
+import { parse } from "../deps/flags.ts";
+import { JSZip } from "../deps/jszip.ts";
 
 const contentScriptName = "content_script.js";
 const backgroundName = "background.js";

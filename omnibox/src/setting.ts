@@ -5,7 +5,7 @@
 /// <reference lib="esnext" />
 /// <reference lib="dom" />
 
-import { browser } from "./deps/webextension.ts";
+import { browser } from "../deps/webextension.ts";
 import { getData, setData } from "./storage.ts";
 
 /** chrome.storage のデータをローカルファイルにセーブ */

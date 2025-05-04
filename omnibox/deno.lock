@@ -1,0 +1,32 @@
+{
+  "version": "5",
+  "specifiers": {
+    "npm:chrome-types@*": "0.1.349"
+  },
+  "npm": {
+    "chrome-types@0.1.349": {
+      "integrity": "sha512-u5Gqcm+wZrKzLsmvyVsRG23YvU4vwH6h1HlEBQqyqgeClGfrdXUEVLes38C8b2RiV3qmTJ/1dgIIq0jBLg98FQ=="
+    }
+  },
+  "redirects": {
+    "https://esm.sh/@types/webextension-polyfill@~0.8.3/index.d.ts": "https://esm.sh/@types/webextension-polyfill@0.8.3/index.d.ts",
+    "https://esm.sh/asearch@~0.0.7?target=denonext": "https://esm.sh/asearch@0.0.7?target=denonext"
+  },
+  "remote": {
+    "https://esm.sh/asearch@0.0.7/denonext/asearch.mjs": "e27a3f734c9bad05d77f8a75c444b612455172e39b921cd3ce6cec8ddf222323",
+    "https://esm.sh/asearch@0.0.7?target=denonext": "70988562a24ac6728bbc016d6098d943ee4dd6f110903e5824c65b43f579b0d7",
+    "https://esm.sh/re_expand@0.2.0": "7fcd0eb2994417395aa64fd5c14faed880022b2714b5735cea60ac7b31fb9b4f",
+    "https://esm.sh/re_expand@0.2.0/denonext/re_expand.mjs": "04df4cdfe34914f4eacd1be2ccef0f9c41d5196e1dd7b349f492703235f9a1bc",
+    "https://esm.sh/webextension-polyfill@0.8.0": "51706bf5d83de1833db1f2b8f09e7c5e6dfe97c2060cfd5f4df1ee955bbcd6d8",
+    "https://esm.sh/webextension-polyfill@0.8.0/denonext/webextension-polyfill.mjs": "8ab9bde768f276ff1c6a867aa0ed6d92c21e5ef0bf951b9feaac272bb244b130",
+    "https://raw.githubusercontent.com/takker99/deno-asearch/0.2.1/mod.ts": "1832ffa30bfb13e241de16328475d95ebac44e303c41789eb333b30e35fc2910"
+  },
+  "workspace": {
+    "dependencies": [
+      "jsr:@luca/esbuild-deno-loader@~0.11.1",
+      "jsr:@std/fs@^1.0.14",
+      "npm:@types/chrome@^0.0.309",
+      "npm:esbuild@~0.25.1"
+    ]
+  }
+}

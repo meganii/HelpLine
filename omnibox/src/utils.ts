@@ -1,4 +1,4 @@
-import { browser } from "./deps/webextension.ts";
+import { browser } from "../deps/webextension.ts";
 
 type PickRequired<T, K extends keyof T> =
   & T

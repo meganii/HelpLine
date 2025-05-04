@@ -2,8 +2,8 @@
 /// <reference lib="esnext" />
 /// <reference lib="dom" />
 
-import { browser } from "./deps/webextension.ts";
-import { Generator } from "./deps/re_expand.js";
+import { browser } from "../deps/webextension.ts";
+import { Generator } from "../deps/re_expand.js";
 
 export interface Suggest {
   descriptions: [string, ...string[]];

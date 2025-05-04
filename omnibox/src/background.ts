@@ -11,8 +11,8 @@
 /// <reference lib="esnext" />
 /// <reference lib="dom" />
 
-import { Asearch } from "./deps/asearch.ts";
-import { browser } from "./deps/webextension.ts";
+import { Asearch } from "../deps/asearch.ts";
+import { browser } from "../deps/webextension.ts";
 import { ensureTabId } from "./utils.ts";
 import { getData } from "./storage.ts";
 import { isURL } from "./isURL.ts";

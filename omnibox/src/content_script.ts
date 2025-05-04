@@ -5,8 +5,8 @@
 import { setData, Suggest } from "./storage.ts";
 import { hasItem } from "./utils.ts";
 import { getPage, getPages } from "./fetch.ts";
-import { parse } from "./deps/scrapbox-parser.ts";
-import { browser } from "./deps/webextension.ts";
+import { parse } from "../deps/scrapbox-parser.ts";
+import { browser } from "../deps/webextension.ts";
 
 function createStatus() {
   const div = document.createElement("div");

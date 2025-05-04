@@ -1,0 +1,20 @@
+{
+  "tasks": {
+    "build": "deno run --allow-env --allow-read --allow-write --allow-run esbuild.ts",
+    "zip": "deno task build --minify; zip -vr dist.zip dist -x \"*.DS_Store\"",
+    "format": "deno fmt",
+    "lint": "deno lint",
+    "check": "deno check .",
+    "up:latest": "deno outdated --update --latest"
+  },
+  "imports": {
+    "@luca/esbuild-deno-loader": "jsr:@luca/esbuild-deno-loader@^0.11.1",
+    "@std/fs": "jsr:@std/fs@^1.0.14",
+    "@types/chrome": "npm:@types/chrome@^0.0.309",
+    "esbuild": "npm:esbuild@^0.25.1"
+  },
+  "compilerOptions": {
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "strict": true
+  }
+}
