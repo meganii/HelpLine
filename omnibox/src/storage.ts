@@ -2,8 +2,8 @@
 /// <reference lib="esnext" />
 /// <reference lib="dom" />
 
-import { browser } from "../deps/webextension.ts";
-import { Generator } from "../deps/re_expand.js";
+import { default as browser } from "https://esm.sh/webextension-polyfill@0.8.0";
+import { default as Generator } from "https://esm.sh/re_expand@0.2.0";
 
 export interface Suggest {
   descriptions: [string, ...string[]];

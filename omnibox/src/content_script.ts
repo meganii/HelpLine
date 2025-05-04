@@ -5,8 +5,8 @@
 import { setData, Suggest } from "./storage.ts";
 import { hasItem } from "./utils.ts";
 import { getPage, getPages } from "./fetch.ts";
-import { parse } from "../deps/scrapbox-parser.ts";
-import { browser } from "../deps/webextension.ts";
+import { parse } from "https://esm.sh/@progfay/scrapbox-parser@7.2.0";
+import { default as browser } from "https://esm.sh/webextension-polyfill@0.8.0";
 
 function createStatus() {
   const div = document.createElement("div");

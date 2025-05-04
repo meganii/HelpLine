@@ -1,6 +1,7 @@
 /// <reference lib="deno.ns" />
+
 import { isURL } from "./isURL.ts";
-import { assert } from "../deps/testing.ts";
+import { assert } from "https://deno.land/std@0.126.0/testing/asserts.ts";
 
 Deno.test("isURL()", () => {
   assert(isURL("https://example.com"));

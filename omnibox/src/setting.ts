@@ -5,7 +5,7 @@
 /// <reference lib="esnext" />
 /// <reference lib="dom" />
 
-import { browser } from "../deps/webextension.ts";
+import { default as browser } from "https://esm.sh/webextension-polyfill@0.8.0";
 import { getData, setData } from "./storage.ts";
 
 /** chrome.storage のデータをローカルファイルにセーブ */

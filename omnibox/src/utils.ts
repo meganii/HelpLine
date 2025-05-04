@@ -1,4 +1,4 @@
-import { browser } from "../deps/webextension.ts";
+import { default as browser } from "https://esm.sh/webextension-polyfill@0.8.0";
 
 type PickRequired<T, K extends keyof T> =
   & T

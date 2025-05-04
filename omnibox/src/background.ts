@@ -11,8 +11,8 @@
 /// <reference lib="esnext" />
 /// <reference lib="dom" />
 
-import { Asearch } from "../deps/asearch.ts";
-import { browser } from "../deps/webextension.ts";
+import { Asearch } from "https://raw.githubusercontent.com/takker99/deno-asearch/0.2.1/mod.ts";
+import { default as browser } from "https://esm.sh/webextension-polyfill@0.8.0";
 import { ensureTabId } from "./utils.ts";
 import { getData } from "./storage.ts";
 import { isURL } from "./isURL.ts";

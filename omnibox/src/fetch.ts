@@ -1,4 +1,4 @@
-import type { PageList } from "../deps/scrapbox.ts";
+import type { PageList } from "https://raw.githubusercontent.com/scrapbox-jp/types/0.0.8/mod.ts";
 
 export async function* getPages(project: string) {
   const pageList = await getPageList(project);
