@@ -1,12 +1,12 @@
 /// <reference no-default-lib="true" />
 /// <reference lib="esnext" />
 /// <reference lib="dom" />
+/// <reference types="npm:@types/chrome" />
 
 import { setData, Suggest } from "./storage.ts";
 import { hasItem } from "./utils.ts";
 import { getPage, getPages } from "./fetch.ts";
 import { parse } from "https://esm.sh/@progfay/scrapbox-parser@7.2.0";
-import { default as browser } from "https://esm.sh/webextension-polyfill@0.8.0";
 
 function createStatus() {
   const div = document.createElement("div");
@@ -33,7 +33,7 @@ async function register_page(): Promise<Suggest | undefined> {
   if (description === "") { // 空文字列入力
     alert(`ヘルプを消去します (${command})`);
     status.hidden = true;
-    await browser.storage.local.remove(command);
+    await chrome.storage.local.remove(command);
   }
   // desc == null (キャンセル)
 }
@@ -201,7 +201,7 @@ async function register() {
 //
 // コールバックでbackground.jsからの値を受け取る
 //
-browser.runtime.onMessage.addListener(async (message) => {
+chrome.runtime.onMessage.addListener(async (message) => {
   if (message.type !== "CLICK_POPUP") return;
 
   status.textContent = "";

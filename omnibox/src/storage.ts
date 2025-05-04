@@ -1,8 +1,8 @@
 /// <reference no-default-lib="true" />
 /// <reference lib="esnext" />
 /// <reference lib="dom" />
+/// <reference types="npm:@types/chrome" />
 
-import { default as browser } from "https://esm.sh/webextension-polyfill@0.8.0";
 import { default as Generator } from "https://esm.sh/re_expand@0.2.0";
 
 export interface Suggest {
@@ -32,13 +32,13 @@ export async function setData(suggests: Iterable<Suggest>) {
     items[command] = [...descriptions, ...items[command]];
   }
 
-  await browser.storage.local.set(items);
+  await chrome.storage.local.set(items);
 }
 
 export async function getData(
   commands: string[] | null,
 ) {
-  const values = await browser.storage.local.get(commands);
+  const values = await chrome.storage.local.get(commands);
   return values as Record<string, [string, ...string[]]>;
 }
 

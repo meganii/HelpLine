@@ -10,19 +10,18 @@
 /// <reference no-default-lib="true" />
 /// <reference lib="esnext" />
 /// <reference lib="dom" />
+/// <reference types="npm:@types/chrome" />
 
 import { Asearch } from "https://raw.githubusercontent.com/takker99/deno-asearch/0.2.1/mod.ts";
-import { default as browser } from "https://esm.sh/webextension-polyfill@0.8.0";
 import { ensureTabId } from "./utils.ts";
 import { getData } from "./storage.ts";
 import { isURL } from "./isURL.ts";
-
 //
 // browserActionボタンを押したときcontent_script.jsにメッセージを送る
 //
-browser.browserAction.onClicked.addListener(async (tab) => {
+chrome.action.onClicked.addListener(async (tab) => {
   ensureTabId(tab);
-  await browser.tabs.sendMessage(tab.id, {
+  await chrome.tabs.sendMessage(tab.id, {
     type: "CLICK_POPUP",
     message: "message",
   });
@@ -31,7 +30,7 @@ browser.browserAction.onClicked.addListener(async (tab) => {
 //
 // ユーザがomniboxで何か入力したとき呼ばれるもの
 //
-browser.omnibox.onInputChanged.addListener(async (text, suggest) => {
+chrome.omnibox.onInputChanged.addListener(async (text, suggest) => {
   const data = await getData(null);
 
   const candidates = search(text, data);
@@ -47,7 +46,7 @@ function search(
   text: string,
   suggests: Record<string, [string, ...string[]]>,
   limit = 10,
-): browser.Omnibox.SuggestResult[] {
+): chrome.Omnibox.SuggestResult[] {
   const matches = [[], [], [], []] as [
     [string, string][],
     [string, string][],
@@ -80,15 +79,15 @@ function search(
 //
 // ユーザがメニューを選択したとき呼ばれるもの
 //
-browser.omnibox.onInputEntered.addListener(async (text) => {
+chrome.omnibox.onInputEntered.addListener(async (text) => {
   if (isURL(text)) {
-    browser.tabs.update({ url: text });
+    chrome.tabs.update({ url: text });
   } else {
     const response = await fetch("https://goquick.org", {
       credentials: "include",
     }); // GoQuick.orgユーザはGoQuick.orgを利用
     const data = await response.text();
-    browser.tabs.update({
+    chrome.tabs.update({
       url: data.match("GoQuick Login")
         ? `https://google.com/search?q=${text}`
         : `https://goquick.org/${text}`,
