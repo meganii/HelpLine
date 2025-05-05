@@ -1,4 +1,4 @@
-import type { PageList } from "scrapbox-type";
+import { PageList } from "jsr:@cosense/types/rest";
 
 export async function* getPages(project: string) {
   const pageList = await getPageList(project);

@@ -3,6 +3,7 @@
   "specifiers": {
     "jsr:@luca/esbuild-deno-loader@*": "0.11.1",
     "jsr:@luca/esbuild-deno-loader@~0.11.1": "0.11.1",
+    "jsr:@progfay/scrapbox-parser@^9.2.0": "9.2.0",
     "jsr:@std/assert@^1.0.13": "1.0.13",
     "jsr:@std/bytes@^1.0.2": "1.0.5",
     "jsr:@std/encoding@^1.0.5": "1.0.10",
@@ -25,6 +26,9 @@
         "jsr:@std/encoding",
         "jsr:@std/path@^1.0.6"
       ]
+    },
+    "@progfay/scrapbox-parser@9.2.0": {
+      "integrity": "82ebb95e72dd0ea44547fd48e2bcb479fd2275fc26c4515598f742e5aaf6e0e5"
     },
     "@std/assert@1.0.13": {
       "integrity": "ae0d31e41919b12c656c742b22522c32fb26ed0cba32975cb0de2a273cb68b29",
@@ -259,7 +263,9 @@
   },
   "workspace": {
     "dependencies": [
+      "jsr:@cosense/types@~0.10.7",
       "jsr:@luca/esbuild-deno-loader@~0.11.1",
+      "jsr:@progfay/scrapbox-parser@^9.2.0",
       "jsr:@std/assert@^1.0.13",
       "jsr:@std/fs@^1.0.14",
       "npm:@types/chrome@^0.0.309",
