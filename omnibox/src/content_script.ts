@@ -6,7 +6,7 @@
 import { setData, Suggest } from "./storage.ts";
 import { hasItem } from "./utils.ts";
 import { getPage, getPages } from "./fetch.ts";
-import { Page, parse } from "jsr:@progfay/scrapbox-parser";
+import { parse } from "jsr:@progfay/scrapbox-parser";
 
 function createStatus() {
   const div = document.createElement("div");
@@ -112,7 +112,7 @@ async function register() {
     const encodedTitle = ms[3];
     const glossary = await getGlossary(project);
     if (!encodedTitle) { // ページリスト
-      let titles = [] as Page[];
+      let titles = [] as string[];
       let total = 0;
       let now = 0;
 
