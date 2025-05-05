@@ -3,16 +3,14 @@
 /// <reference lib="dom" />
 /// <reference types="npm:@types/chrome" />
 
-import { default as browser } from "webextension-polyfill";
-
 type PickRequired<T, K extends keyof T> =
   & T
   & {
     [P in K]-?: T[P];
   };
 export function ensureTabId(
-  tab: browser.Tabs.Tab,
-): asserts tab is PickRequired<browser.Tabs.Tab, "id"> {
+  tab: chrome.tabs.Tab,
+): asserts tab is PickRequired<chrome.tabs.Tab, "id"> {
   if (tab.id !== undefined) return;
   throw TypeError("The value must has id.");
 }
